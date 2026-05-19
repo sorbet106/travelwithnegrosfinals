@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tourist Destinations — Negros Occidental</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<div class="page-banner" style="background-image:url('images/landscape.jpg');">
+  <div class="page-banner-overlay"></div>
+  <div class="container-xl text-center">
+    <div class="breadcrumb-custom mb-3"><a href="index.html">Home</a><span class="current"> / Destinations</span></div>
+    <h1>Tourist Destinations</h1>
+    <p>Explore the stunning beaches, mountains, heritage sites, and natural wonders of Negros Occidental.</p>
+  </div>
+</div>
+
+<section style="background:var(--cream);padding:40px 0 20px;">
+  <div class="container-xl">
+    <div class="filter-bar">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-5">
+          <div class="search-input-wrap">
+            <i class="bi bi-search"></i>
+            <input type="text" id="searchInput" placeholder="Search by name, city, or category…" class="form-control">
+          </div>
+        </div>
+        <div class="col-md-7">
+          <div class="d-flex gap-2 flex-wrap" id="filterButtons">
+            <button class="filter-btn active" data-cat="All">All</button>
+            <button class="filter-btn" data-cat="Beach"><i class="bi bi-water me-1"></i>Beach</button>
+            <button class="filter-btn" data-cat="Mountain"><i class="bi bi-tornado me-1"></i>Mountain</button>
+            <button class="filter-btn" data-cat="Waterfall"><i class="bi bi-droplet-fill me-1"></i>Waterfall</button>
+            <button class="filter-btn" data-cat="Historical Site"><i class="bi bi-building me-1"></i>Historical</button>
+            <button class="filter-btn" data-cat="Island"><i class="bi bi-geo-fill me-1"></i>Island</button>
+            <button class="filter-btn" data-cat="Adventure"><i class="bi bi-lightning-fill me-1"></i>Adventure</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="resultsCount" style="font-family:'Raleway',sans-serif;font-size:0.8rem;color:var(--text-muted);margin-bottom:8px;padding:0 4px;"></div>
+  </div>
+</section>
+
+<section class="section-py" style="padding-top:20px;background:var(--cream);">
+  <div class="container-xl">
+    <div class="row g-4" id="destinationsGrid"></div>
+    <div id="noResults">
+      <i class="bi bi-search" style="color:var(--text-muted);"></i>
+      <h5 style="font-family:'Playfair Display',serif;color:var(--green-dark);">No destinations found</h5>
+      <p>Try a different search term or category.</p>
+    </div>
+  </div>
+</section>
+
+<div class="modal fade" id="destModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-img-wrap" style="position:relative;">
+        <img id="modalImg" src="" alt="" class="modal-img">
+        <div class="modal-header-custom">
+          <button class="modal-close-btn" data-bs-dismiss="modal"><i class="bi bi-x-lg"></i></button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <span class="modal-dest-badge" id="modalBadge"></span>
+        <h3 class="modal-dest-title" id="modalTitle"></h3>
+        <div class="modal-dest-location" id="modalLocation"></div>
+        <p style="font-size:0.9rem;color:#555;line-height:1.8;margin-bottom:16px;" id="modalDesc"></p>
+        <div class="modal-info-grid">
+          <div class="modal-info-item">
+            <div class="modal-info-label"><i class="bi bi-ticket-fill me-1"></i>Entrance Fee</div>
+            <div class="modal-info-value" id="modalFee"></div>
+          </div>
+          <div class="modal-info-item">
+            <div class="modal-info-label"><i class="bi bi-clock-fill me-1"></i>Opening Hours</div>
+            <div class="modal-info-value" id="modalHours"></div>
+          </div>
+          <div class="modal-info-item">
+            <div class="modal-info-label"><i class="bi bi-sun-fill me-1"></i>Best Time to Visit</div>
+            <div class="modal-info-value" id="modalBestTime"></div>
+          </div>
+          <div class="modal-info-item">
+            <div class="modal-info-label"><i class="bi bi-geo-alt-fill me-1"></i>Location</div>
+            <div class="modal-info-value" id="modalMunicipality"></div>
+          </div>
+        </div>
+        <div class="modal-section-title">Activities</div>
+        <div class="modal-activities-list" id="modalActivities"></div>
+        <div class="modal-section-title">Travel Tip</div>
+        <div class="modal-tip" id="modalTip"></div>
+        <div class="text-end mt-4">
+          <a href="inquiry.html" class="btn-primary-custom">
+            <i class="bi bi-envelope-fill"></i> Inquire About This Destination
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="styles/main.js"></script>
+
+<script>
+  renderNavbar();
+  renderFooter();
+
+  let activeCategory = 'All';
+  let searchTerm = '';
+
+  function renderDestinations() {
+    const grid = document.getElementById('destinationsGrid');
+    const noResults = document.getElementById('noResults');
+    const resultsCount = document.getElementById('resultsCount');
+    grid.innerHTML = '';
+
+    const filtered = destinations.filter(d => {
+      const matchCat  = activeCategory === 'All' || d.category === activeCategory;
+      const q = searchTerm.toLowerCase();
+      const matchSearch = !q ||
+        d.name.toLowerCase().includes(q) ||
+        d.municipality.toLowerCase().includes(q) ||
+        d.category.toLowerCase().includes(q);
+      return matchCat && matchSearch;
+    });
+
+    resultsCount.textContent = `Showing ${filtered.length} of ${destinations.length} destinations`;
+
+    if (filtered.length === 0) {
+      noResults.style.display = 'block';
+      return;
+    }
+    noResults.style.display = 'none';
+
+    filtered.forEach((d, i) => {
+      const col = document.createElement('div');
+      col.className = 'col-md-6 col-lg-4 fade-up';
+      col.style.animationDelay = `${i * 60}ms`;
+      col.innerHTML = `
+        <div class="destination-card">
+          <div class="destination-card-img-wrap">
+            <img src="${d.image}" alt="${d.name}" loading="lazy">
+            <span class="destination-card-badge">${d.category}</span>
+          </div>
+          <div class="destination-card-body">
+            <div class="destination-card-location"><i class="bi bi-geo-alt-fill me-1"></i>${d.municipality}</div>
+            <div class="destination-card-name">${d.name}</div>
+            <p class="destination-card-desc">${d.shortDesc}</p>
+            <div class="destination-card-meta">
+              <span class="destination-card-meta-item"><i class="bi bi-ticket-fill"></i>${d.entranceFee ? d.entranceFee.split(' ')[0] : 'Free'}</span>
+              <span class="destination-card-meta-item"><i class="bi bi-clock-fill"></i>${d.openingHours.split(';')[0]}</span>
+            </div>
+            <button class="btn-primary-custom w-100" onclick="openModal(${d.id})">
+              <i class="bi bi-eye-fill"></i> View Details
+            </button>
+          </div>
+        </div>`;
+      grid.appendChild(col);
+    });
+
+    setTimeout(() => {
+      document.querySelectorAll('#destinationsGrid .fade-up').forEach(el => el.classList.add('visible'));
+    }, 50);
+  }
+
+  function openModal(id) {
+    const d = destinations.find(x => x.id === id);
+    if (!d) return;
+    document.getElementById('modalImg').src = d.image;
+    document.getElementById('modalImg').alt = d.name;
+    document.getElementById('modalBadge').textContent = d.category;
+    document.getElementById('modalTitle').textContent = d.name;
+    document.getElementById('modalLocation').innerHTML = `<i class="bi bi-geo-alt-fill me-1"></i>${d.municipality}, Negros Occidental`;
+    document.getElementById('modalDesc').textContent = d.fullDesc;
+    document.getElementById('modalFee').textContent = d.entranceFee;
+    document.getElementById('modalHours').textContent = d.openingHours;
+    document.getElementById('modalBestTime').textContent = d.bestTime;
+    document.getElementById('modalMunicipality').textContent = d.municipality;
+    document.getElementById('modalTip').textContent = d.travelTip;
+
+    const actList = document.getElementById('modalActivities');
+    actList.innerHTML = '';
+    d.activities.forEach(act => {
+      const tag = document.createElement('span');
+      tag.className = 'modal-activity-tag';
+      tag.textContent = act;
+      actList.appendChild(tag);
+    });
+
+    const modal = new bootstrap.Modal(document.getElementById('destModal'));
+    modal.show();
+  }
+
+  document.getElementById('filterButtons').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeCategory = btn.dataset.cat;
+    renderDestinations();
+  });
+
+  document.getElementById('searchInput').addEventListener('input', e => {
+    searchTerm = e.target.value;
+    renderDestinations();
+  });
+
+  renderDestinations();
+</script>
+</body>
+</html>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inquiry Form — Negros Occidental</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<div class="page-banner" style="background-image:url('images/capitolpark.jpg');">
+  <div class="page-banner-overlay"></div>
+  <div class="container-xl text-center">
+    <div class="breadcrumb-custom mb-3"><a href="index.html">Home</a><span class="current"> / Inquiry</span></div>
+    <h1>Plan Your Visit</h1>
+    <p>Fill out the form below and our tourism team will get back to you shortly.</p>
+  </div>
+</div>
+
+<section class="section-py bg-cream">
+  <div class="container-xl">
+    <div class="inquiry-wrap">
+      <div class="row g-0">
+
+        <div class="col-lg-4">
+          <div class="inquiry-sidebar h-100">
+            <div class="section-label mb-3" style="color:var(--gold-light);">Get in Touch</div>
+            <h3>We'd Love to Help You Explore!</h3>
+            <p>Whether you're planning a beach getaway, a heritage tour, or a festival experience, our team is here to help you plan the perfect Negrense adventure.</p>
+
+            <div class="inquiry-contact-item">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Provincial Capitol, Bacolod City, Negros Occidental, Philippines</span>
+            </div>
+            <div class="inquiry-contact-item">
+              <i class="bi bi-telephone-fill"></i>
+              <span>(034) 432-0048</span>
+            </div>
+            <div class="inquiry-contact-item">
+              <i class="bi bi-envelope-fill"></i>
+              <span>info@negrosoccidental-tourism.ph</span>
+            </div>
+            <div class="inquiry-contact-item">
+              <i class="bi bi-clock-fill"></i>
+              <span>Monday – Friday, 8:00 AM – 5:00 PM</span>
+            </div>
+
+            <hr style="border-color:rgba(255,255,255,0.15);margin:28px 0;">
+
+            <div class="section-label mb-3" style="color:var(--gold-light);">Follow Us</div>
+            <div class="d-flex gap-3">
+              <a href="#" style="color:rgba(255,255,255,0.7);font-size:1.4rem;transition:color 0.2s;" onmouseover="this.style.color='#e8b84b'" onmouseout="this.style.color='rgba(255,255,255,0.7)'"><i class="bi bi-facebook"></i></a>
+              <a href="#" style="color:rgba(255,255,255,0.7);font-size:1.4rem;transition:color 0.2s;" onmouseover="this.style.color='#e8b84b'" onmouseout="this.style.color='rgba(255,255,255,0.7)'"><i class="bi bi-instagram"></i></a>
+              <a href="#" style="color:rgba(255,255,255,0.7);font-size:1.4rem;transition:color 0.2s;" onmouseover="this.style.color='#e8b84b'" onmouseout="this.style.color='rgba(255,255,255,0.7)'"><i class="bi bi-youtube"></i></a>
+              <a href="#" style="color:rgba(255,255,255,0.7);font-size:1.4rem;transition:color 0.2s;" onmouseover="this.style.color='#e8b84b'" onmouseout="this.style.color='rgba(255,255,255,0.7)'"><i class="bi bi-tiktok"></i></a>
+            </div>
+
+            <div style="margin-top:36px;padding:20px;background:rgba(255,255,255,0.08);border-radius:10px;border:1px solid rgba(255,255,255,0.12);">
+              <div style="font-family:'Playfair Display',serif;font-size:0.95rem;color:#fff;font-weight:700;margin-bottom:8px;">Response Time</div>
+              <p style="font-size:0.82rem;opacity:0.75;margin:0;line-height:1.7;">We typically respond to inquiries within <strong style="color:var(--gold-light);">1–2 business days</strong>. For urgent matters, please call our tourism hotline directly.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-8">
+          <div class="inquiry-form-body">
+            <div class="section-label mb-2">Inquiry Form</div>
+            <h2 class="section-heading mb-1" style="font-size:1.8rem;">Tell Us About Your Trip</h2>
+            <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:28px;">All fields marked <span style="color:#dc3545;">*</span> are required.</p>
+
+            <div class="form-success-banner" id="successBanner">
+              <i class="bi bi-check-circle-fill" style="color:var(--green-mid);"></i>
+              <p style="font-size:1rem;color:var(--green-dark);font-weight:700;margin-bottom:4px;">Inquiry Sent Successfully!</p>
+              <p style="font-size:0.85rem;color:#555;margin:0;">Thank you! Our tourism team will get back to you within 1–2 business days.</p>
+            </div>
+
+            <form id="inquiryForm" novalidate>
+              <div class="row g-4">
+
+                <div class="col-md-6">
+                  <label class="form-label-custom">Full Name <span style="color:#dc3545;">*</span></label>
+                  <input type="text" id="fullName" class="form-control-custom" placeholder="e.g. Juan dela Cruz">
+                  <div class="invalid-feedback-custom" id="err-fullName">Full name is required.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label-custom">Email Address <span style="color:#dc3545;">*</span></label>
+                  <input type="email" id="email" class="form-control-custom" placeholder="e.g. juan@email.com">
+                  <div class="invalid-feedback-custom" id="err-email">Please enter a valid email address.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label-custom">Contact Number <span style="color:#dc3545;">*</span></label>
+                  <input type="tel" id="contactNumber" class="form-control-custom" placeholder="e.g. 09171234567">
+                  <div class="invalid-feedback-custom" id="err-contactNumber">Contact number must contain numbers only (10–11 digits).</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label-custom">Select Destination <span style="color:#dc3545;">*</span></label>
+                  <select id="destination" class="form-control-custom" style="appearance:auto;">
+                    <option value="">— Choose a Destination —</option>
+                  </select>
+                  <div class="invalid-feedback-custom" id="err-destination">Please select a destination.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label-custom">Travel Date <span style="color:#dc3545;">*</span></label>
+                  <input type="date" id="travelDate" class="form-control-custom">
+                  <div class="invalid-feedback-custom" id="err-travelDate">Please select a travel date.</div>
+                </div>
+
+                <div class="col-md-6">
+                  <label class="form-label-custom">Number of Visitors <span style="color:#dc3545;">*</span></label>
+                  <input type="number" id="visitors" class="form-control-custom" placeholder="e.g. 2" min="1">
+                  <div class="invalid-feedback-custom" id="err-visitors">Number of visitors must be at least 1.</div>
+                </div>
+
+                <div class="col-12">
+                  <label class="form-label-custom">Message / Special Requests <span style="color:#dc3545;">*</span></label>
+                  <textarea id="message" class="form-control-custom" rows="5" placeholder="Tell us about your trip — interests, accommodation needs, group details, etc."></textarea>
+                  <div class="invalid-feedback-custom" id="err-message">Message is required.</div>
+                </div>
+
+                <div class="col-12">
+                  <button type="submit" class="btn-primary-custom" style="width:100%;justify-content:center;padding:15px;">
+                    <i class="bi bi-send-fill me-2"></i> Submit Inquiry
+                  </button>
+                  <p style="font-size:0.76rem;color:var(--text-muted);text-align:center;margin-top:12px;">
+                    By submitting this form, you agree to be contacted by the Negros Occidental Tourism Office regarding your inquiry.
+                  </p>
+                </div>
+
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-py bg-cream-dark">
+  <div class="container-xl">
+    <div class="section-label text-center mb-2">Why Reach Out?</div>
+    <h2 class="section-heading text-center mb-5">How We Help You</h2>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="highlight-card">
+          <i class="bi bi-map-fill"></i>
+          <h5>Custom Itineraries</h5>
+          <p>Our team will tailor a day-by-day itinerary based on your interests, budget, and travel dates.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="highlight-card">
+          <i class="bi bi-house-check-fill"></i>
+          <h5>Accommodation Advice</h5>
+          <p>We'll recommend the best-fit hotels, resorts, or homestays near your chosen destinations.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="highlight-card">
+          <i class="bi bi-bus-front-fill"></i>
+          <h5>Transport Options</h5>
+          <p>Get guidance on the most convenient and affordable ways to get around Negros Occidental.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="highlight-card">
+          <i class="bi bi-star-fill"></i>
+          <h5>Local Insights</h5>
+          <p>Our team shares insider knowledge — hidden gems, best local restaurants, and seasonal events.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="styles/main.js"></script>
+<script>
+  renderNavbar();
+  renderFooter();
+
+  populateDestinationSelect('destination');
+
+  document.getElementById('travelDate').min = new Date().toISOString().split('T')[0];
+
+  function showError(fieldId, show) {
+    const field = document.getElementById(fieldId);
+    const err   = document.getElementById('err-' + fieldId);
+    if (show) {
+      field.classList.add('is-invalid');
+      err.classList.add('show');
+    } else {
+      field.classList.remove('is-invalid');
+      err.classList.remove('show');
+    }
+  }
+
+  function validateForm() {
+    let valid = true;
+
+    const name = document.getElementById('fullName').value.trim();
+    showError('fullName', !name);
+    if (!name) valid = false;
+
+
+    const email = document.getElementById('email').value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    showError('email', !emailRegex.test(email));
+    if (!emailRegex.test(email)) valid = false;
+
+    const contact = document.getElementById('contactNumber').value.trim();
+    const contactRegex = /^\d{10,11}$/;
+    showError('contactNumber', !contactRegex.test(contact));
+    if (!contactRegex.test(contact)) valid = false;
+
+    const dest = document.getElementById('destination').value;
+    showError('destination', !dest);
+    if (!dest) valid = false;
+
+    const date = document.getElementById('travelDate').value;
+    showError('travelDate', !date);
+    if (!date) valid = false;
+
+    const visitors = parseInt(document.getElementById('visitors').value, 10);
+    showError('visitors', isNaN(visitors) || visitors < 1);
+    if (isNaN(visitors) || visitors < 1) valid = false;
+
+    const msg = document.getElementById('message').value.trim();
+    showError('message', !msg);
+    if (!msg) valid = false;
+
+    return valid;
+  }
+
+  ['fullName','email','contactNumber','destination','travelDate','visitors','message'].forEach(id => {
+    document.getElementById(id).addEventListener('input', () => showError(id, false));
+    document.getElementById(id).addEventListener('change', () => showError(id, false));
+  });
+
+  document.getElementById('inquiryForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    this.style.display = 'none';
+    document.getElementById('successBanner').classList.add('show');
+    document.getElementById('successBanner').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+</script>
+</body>
+</html>

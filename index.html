@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Negros Occidental — The Land of Sweet Surprises</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+
+<section class="hero" style="background-image:url('images/landscape.jpg'); background-size:cover; background-position:center; background-repeat:no-repeat; min-height:100vh; display:flex; flex-direction:column; justify-content:center; position:relative; overflow:hidden;">
+  <div class="hero-overlay"></div>
+
+  <div class="container-xl" style="position:relative;z-index:2; padding-top:80px; padding-bottom:140px;">
+    <div class="hero-content">
+      <div class="hero-label"><i class="bi bi-geo-alt-fill me-2"></i>Western Visayas, Philippines</div>
+      <h1 class="hero-title">
+        Province of<br>
+        <span>Negros Occidental</span>
+      </h1>
+      <p class="hero-slogan">
+        Explore Negros Occidental: Discover beaches, heritage, festivals, nature, and the sweetest adventures.
+      </p>
+      <p class="hero-welcome">
+        Welcome to the Land of Sweet Surprises — where sugar fields meet the sea, ancestral mansions tell timeless stories,
+        and every smiling face invites you to discover more.
+      </p>
+      <div class="d-flex gap-3 flex-wrap">
+        <a href="destinations.html" class="btn-hero-primary">
+          <i class="bi bi-compass-fill"></i> Explore Destinations
+        </a>
+        <a href="about.html" class="btn-hero-secondary">
+          <i class="bi bi-play-circle-fill"></i> About the Province
+        </a>
+      </div>
+    </div>
+  </div>
+</section> 
+
+<section class="welcome-strip">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="gold-bar"></div>
+        <h2>A Province That Stays With You</h2>
+        <p class="mt-3">
+          Negros Occidental is the sugar capital of the Philippines — a province defined by lush green fields,
+          dramatic coastlines, centuries-old heritage houses, vibrant festivals, and an extraordinary culinary tradition.
+          From the famous MassKara Festival to the ghost-like beauty of The Ruins, every corner tells a story.
+        </p>
+        <a href="about.html" class="btn-gold d-inline-flex align-items-center gap-2 mt-4">
+          Discover More <i class="bi bi-arrow-right"></i>
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <div class="row g-3">
+          <div class="col-6">
+            <img src="images/theruins.jpg" alt="The Ruins" style="width:100%;height:180px;object-fit:cover;border-radius:12px;">
+          </div>
+          <div class="col-6">
+            <img src="images/masskara.jpg" alt="MassKara Festival" style="width:100%;height:180px;object-fit:cover;border-radius:12px;">
+          </div>
+          <div class="col-6">
+            <img src="images/mambukal.jpg" alt="Mambukal" style="width:100%;height:180px;object-fit:cover;border-radius:12px;">
+          </div>
+          <div class="col-6">
+            <img src="images/lakawonisl.jpg" alt="Lakawon Island" style="width:100%;height:180px;object-fit:cover;border-radius:12px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-py bg-cream">
+  <div class="container-xl">
+    <div class="section-label text-center mb-2">Reasons to Visit</div>
+    <h2 class="section-heading text-center mb-2">Why Choose Negros Occidental?</h2>
+    <span class="divider-gold d-block mb-5"></span>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="highlight-card">
+          <i class="bi bi-water"></i>
+          <h5>Pristine Beaches</h5>
+          <p>From Lakawon Island to Sugar Beach and Danjugan, the coastline offers world-class swimming, diving, and snorkeling.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="highlight-card">
+          <i class="bi bi-building-fill"></i>
+          <h5>Rich Heritage</h5>
+          <p>Explore The Ruins, Silay's ancestral houses, and colonial-era churches that bring Negrense history to life.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="highlight-card">
+          <i class="bi bi-music-note-list"></i>
+          <h5>Vibrant Festivals</h5>
+          <p>The world-famous MassKara Festival and a calendar full of colorful celebrations define the Negrense spirit.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 fade-up">
+        <div class="highlight-card">
+          <i class="bi bi-cup-hot-fill"></i>
+          <h5>Unique Cuisine</h5>
+          <p>Savor Kansi, Piaya, Napoleones, and Batchoy — flavors that are distinctly and deliciously Negrense.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-py bg-cream-dark featured-strip">
+  <div class="container-xl">
+    <div class="section-label text-center mb-2">Must-See</div>
+    <h2 class="section-heading text-center mb-2">Featured Destinations</h2>
+    <span class="divider-gold d-block mb-5"></span>
+    <div class="row g-4" id="featuredDestinations"></div>
+    <div class="text-center mt-5">
+      <a href="destinations.html" class="btn-primary-custom">
+        View All Destinations <i class="bi bi-arrow-right"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="section-py bg-cream">
+  <div class="container-xl">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-5 fade-up">
+        <div class="position-relative">
+          <img src="images/masskara.jpg" alt="MassKara Festival" style="width:100%;height:420px;object-fit:cover;border-radius:16px;box-shadow:0 16px 48px rgba(0,0,0,0.18);">
+          <div style="position:absolute;bottom:-20px;right:-20px;background:#1a3d1b;color:#fff;border-radius:12px;padding:18px 22px;box-shadow:0 8px 24px rgba(0,0,0,0.2);">
+            <div style="font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:800;">MassKara</div>
+            <div style="font-family:'Raleway',sans-serif;font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#e8b84b;">Every October</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7 fade-up">
+        <div class="section-label mb-2">Celebrate</div>
+        <h2 class="section-heading mb-3">Festivals &amp; Culture</h2>
+        <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:20px;">
+          Negros Occidental's festivals are a reflection of its people: resilient, joyful, and deeply proud of their heritage.
+          The MassKara Festival — the City of Smiles' crown jewel — draws thousands of visitors every October with its
+          dazzling street dances, elaborate masks, and infectious energy.
+        </p>
+        <p style="font-size:0.95rem;color:#555;line-height:1.8;margin-bottom:28px;">
+          Beyond MassKara, the Pasalamat Festival in La Carlota, Kali Kalihan in Bago City, and the Dinagsa Festival
+          in Cadiz City showcase the province's rich agricultural roots and artistic traditions.
+        </p>
+        <a href="festivals.html" class="btn-primary-custom">
+          <i class="bi bi-star-fill"></i> Explore Festivals
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-py" style="background:var(--green-dark);">
+  <div class="container-xl">
+    <div class="section-label text-center mb-2" style="color:var(--gold-light);">Taste</div>
+    <h2 class="section-heading text-center mb-2" style="color:#fff;">Flavors of Negros Occidental</h2>
+    <span class="divider-gold d-block mb-5"></span>
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-md-3 text-center fade-up">
+        <img src="images/kansi.jpg" alt="Kansi" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px;">
+        <div style="color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;">Kansi</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.78rem;">Sour Beef Soup</div>
+      </div>
+      <div class="col-6 col-md-3 text-center fade-up">
+        <img src="images/piaya.jpg" alt="Piaya" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px;">
+        <div style="color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;">Piaya</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.78rem;">Sweet Flatbread</div>
+      </div>
+      <div class="col-6 col-md-3 text-center fade-up">
+        <img src="images/napeleones.jpg" alt="Napoleones" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px;">
+        <div style="color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;">Napoleones</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.78rem;">Creamy Pastry</div>
+      </div>
+      <div class="col-6 col-md-3 text-center fade-up">
+        <img src="images/batchoy.jpg" alt="Batchoy" style="width:100%;height:160px;object-fit:cover;border-radius:12px;margin-bottom:12px;">
+        <div style="color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:1rem;">Batchoy</div>
+        <div style="color:rgba(255,255,255,0.6);font-size:0.78rem;">Noodle Soup</div>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <a href="food.html" class="btn-gold">
+        <i class="bi bi-cup-hot-fill me-2"></i> Explore Food &amp; Delicacies
+      </a>
+    </div>
+  </div>
+</section>
+
+<section style="background:url('images/landscape.jpg') center/cover no-repeat;position:relative;padding:100px 0;">
+  <div style="position:absolute;inset:0;background:rgba(26,61,27,0.7);"></div>
+  <div class="container-xl text-center" style="position:relative;z-index:2;">
+    <div class="section-label mb-2" style="color:var(--gold-light);">Plan Your Trip</div>
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(2rem,5vw,3.2rem);color:#fff;font-weight:800;margin-bottom:14px;">
+      Ready to Visit Negros Occidental?
+    </h2>
+    <p style="color:rgba(255,255,255,0.82);font-size:1rem;max-width:520px;margin:0 auto 36px;">
+      Send us an inquiry and our tourism team will help you plan the perfect Negrense adventure.
+    </p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="inquiry.html" class="btn-hero-primary">
+        <i class="bi bi-envelope-fill"></i> Send an Inquiry
+      </a>
+      <a href="traveltips.html" class="btn-hero-secondary">
+        <i class="bi bi-lightbulb-fill"></i> Travel Tips
+      </a>
+    </div>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="styles/main.js"></script>
+
+
+
+<script>
+  renderNavbar();
+  renderFooter();
+
+  const featured = destinations.slice(0, 4);
+  const container = document.getElementById('featuredDestinations');
+  featured.forEach(d => {
+    const col = document.createElement('div');
+    col.className = 'col-md-6 col-lg-3 fade-up';
+    col.innerHTML = `
+      <div class="destination-card">
+        <div class="destination-card-img-wrap">
+          <img src="${d.image}" alt="${d.name}" loading="lazy">
+          <span class="destination-card-badge">${d.category}</span>
+        </div>
+        <div class="destination-card-body">
+          <div class="destination-card-location"><i class="bi bi-geo-alt-fill me-1"></i>${d.municipality}</div>
+          <div class="destination-card-name">${d.name}</div>
+          <p class="destination-card-desc">${d.shortDesc.substring(0,110)}...</p>
+          <a href="destinations.html" class="btn-outline-custom mt-auto">View Details <i class="bi bi-arrow-right"></i></a>
+        </div>
+      </div>`;
+    container.appendChild(col);
+  });
+</script>
+</body>
+</html>
