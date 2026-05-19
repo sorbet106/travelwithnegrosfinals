@@ -169,20 +169,6 @@ const destinations = [
   },
   {
     id: 13,
-    name: "Kabankalan Cathedral",
-    municipality: "Kabankalan City",
-    category: "Historical Site",
-    image: "images/francis.jpg",
-    shortDesc: "The historic St. Francis Xavier Cathedral, Kabankalan’s iconic landmark and center of Catholic faith, known for its grand architecture and cultural significance.",
-    fullDesc: "The St. Francis Xavier Cathedral in Kabankalan City is a prominent religious and cultural landmark in southern Negros Occidental. Built during the Spanish colonial period, the cathedral features a striking façade, towering bell towers, and a spacious interior that reflects traditional ecclesiastical design. It serves as the seat of the Diocese of Kabankalan and remains an active place of worship, hosting major liturgical celebrations and community gatherings. Beyond its spiritual role, the cathedral stands as a symbol of Kabankalan’s heritage and resilience, making it a must-visit site for pilgrims and travelers alike.",
-    entranceFee: "Free",
-    openingHours: "6:00 AM – 8:00 PM daily",
-    activities: ["Prayer and mass", "Heritage photography", "Historical tour", "Cultural appreciation"],
-    bestTime: "Year-round",
-    travelTip: "Dress modestly when visiting. The town of Kabankalan is also known for its bustling market and local cuisine."
-  },
-  {
-    id: 14,
     name: "Bulata White Beach",
     municipality: "Cauayan",
     category: "Beach",
@@ -196,7 +182,7 @@ const destinations = [
     travelTip: "Combine with a day trip to Danjugan Island. The drive from Bacolod takes about 3.5 hours."
   },
   {
-    id: 15,
+    id: 14,
     name: "Mandayao Falls",
     municipality: "La Castellana",
     category: "Waterfall",
@@ -210,7 +196,7 @@ const destinations = [
     travelTip: "Wear sturdy shoes for the trek; paths can be slippery."
   },
   {
-    id: 16,
+    id: 15,
     name: "Jomabo Island",
     municipality: "Escalante City",
     category: "Island",
@@ -224,7 +210,7 @@ const destinations = [
     travelTip: "Book accommodation in advance for weekends. The banca ride from Escalante port takes about 30 minutes."
   },
   {
-    id: 17,
+    id: 16,
     name: "Sugar Beach",
     municipality: "Sipalay City",
     category: "Beach",
